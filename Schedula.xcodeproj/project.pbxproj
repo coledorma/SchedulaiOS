@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E50E37C51EC4ADE50008DA7D /* WinterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50E37C41EC4ADE50008DA7D /* WinterViewController.swift */; };
+		E518E9FE1ECC9D820042E57F /* CalendarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E518E9FD1ECC9D820042E57F /* CalendarCollectionViewController.swift */; };
+		E518EA001ECCA0470042E57F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E518E9FF1ECCA0470042E57F /* CollectionViewCell.swift */; };
+		E518EA041ECCE0F80042E57F /* OptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E518EA031ECCE0F80042E57F /* OptionCollectionViewCell.swift */; };
 		E5F29FA51EC33E07001BD225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F29FA41EC33E07001BD225 /* AppDelegate.swift */; };
 		E5F29FA71EC33E07001BD225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F29FA61EC33E07001BD225 /* ViewController.swift */; };
 		E5F29FAA1EC33E07001BD225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F29FA81EC33E07001BD225 /* Main.storyboard */; };
@@ -14,6 +18,19 @@
 		E5F29FAF1EC33E07001BD225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F29FAD1EC33E07001BD225 /* LaunchScreen.storyboard */; };
 		E5F29FBA1EC33E07001BD225 /* SchedulaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F29FB91EC33E07001BD225 /* SchedulaTests.swift */; };
 		E5F29FC51EC33E07001BD225 /* SchedulaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F29FC41EC33E07001BD225 /* SchedulaUITests.swift */; };
+		E5F29FD71EC34678001BD225 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F29FD61EC34678001BD225 /* SecondViewController.swift */; };
+		E5F29FE31EC373E8001BD225 /* FallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F29FE21EC373E8001BD225 /* FallViewController.swift */; };
+		E5F7149C1EDEF313006E0775 /* Timeslot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7149B1EDEF313006E0775 /* Timeslot.swift */; };
+		E5F7149E1EDEF350006E0775 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7149D1EDEF350006E0775 /* Section.swift */; };
+		E5F714A01EDEF37E006E0775 /* SubSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7149F1EDEF37E006E0775 /* SubSection.swift */; };
+		E5F714A21EDEF398006E0775 /* Commitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F714A11EDEF398006E0775 /* Commitment.swift */; };
+		E5F714A41EDEF3B4006E0775 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F714A31EDEF3B4006E0775 /* Course.swift */; };
+		E5F714A61EDEF3C8006E0775 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F714A51EDEF3C8006E0775 /* Node.swift */; };
+		E5F714A81EDEF3E1006E0775 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F714A71EDEF3E1006E0775 /* LinkedList.swift */; };
+		E5F714AA1EDEF3F9006E0775 /* MyComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F714A91EDEF3F9006E0775 /* MyComparator.swift */; };
+		E5F714AC1EDEF41B006E0775 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F714AB1EDEF41B006E0775 /* Schedule.swift */; };
+		E5F714AE1EDEF438006E0775 /* ScheduleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F714AD1EDEF438006E0775 /* ScheduleGenerator.swift */; };
+		E5F714B01EE051EE006E0775 /* CourseTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F714AF1EE051EE006E0775 /* CourseTabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E50E37C41EC4ADE50008DA7D /* WinterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinterViewController.swift; sourceTree = "<group>"; };
+		E518E9FD1ECC9D820042E57F /* CalendarCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewController.swift; sourceTree = "<group>"; };
+		E518E9FF1ECCA0470042E57F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E518EA031ECCE0F80042E57F /* OptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		E5F29FA11EC33E07001BD225 /* Schedula.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedula.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5F29FA41EC33E07001BD225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5F29FA61EC33E07001BD225 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +68,19 @@
 		E5F29FC01EC33E07001BD225 /* SchedulaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchedulaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5F29FC41EC33E07001BD225 /* SchedulaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulaUITests.swift; sourceTree = "<group>"; };
 		E5F29FC61EC33E07001BD225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5F29FD61EC34678001BD225 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E5F29FE21EC373E8001BD225 /* FallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallViewController.swift; sourceTree = "<group>"; };
+		E5F7149B1EDEF313006E0775 /* Timeslot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeslot.swift; sourceTree = "<group>"; };
+		E5F7149D1EDEF350006E0775 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		E5F7149F1EDEF37E006E0775 /* SubSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSection.swift; sourceTree = "<group>"; };
+		E5F714A11EDEF398006E0775 /* Commitment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commitment.swift; sourceTree = "<group>"; };
+		E5F714A31EDEF3B4006E0775 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		E5F714A51EDEF3C8006E0775 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		E5F714A71EDEF3E1006E0775 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		E5F714A91EDEF3F9006E0775 /* MyComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyComparator.swift; sourceTree = "<group>"; };
+		E5F714AB1EDEF41B006E0775 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		E5F714AD1EDEF438006E0775 /* ScheduleGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleGenerator.swift; sourceTree = "<group>"; };
+		E5F714AF1EE051EE006E0775 /* CourseTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +133,27 @@
 			children = (
 				E5F29FA41EC33E07001BD225 /* AppDelegate.swift */,
 				E5F29FA61EC33E07001BD225 /* ViewController.swift */,
+				E5F714AF1EE051EE006E0775 /* CourseTabController.swift */,
+				E5F29FE21EC373E8001BD225 /* FallViewController.swift */,
+				E50E37C41EC4ADE50008DA7D /* WinterViewController.swift */,
+				E5F29FD61EC34678001BD225 /* SecondViewController.swift */,
+				E518E9FD1ECC9D820042E57F /* CalendarCollectionViewController.swift */,
+				E518E9FF1ECCA0470042E57F /* CollectionViewCell.swift */,
+				E518EA031ECCE0F80042E57F /* OptionCollectionViewCell.swift */,
 				E5F29FA81EC33E07001BD225 /* Main.storyboard */,
 				E5F29FAB1EC33E07001BD225 /* Assets.xcassets */,
 				E5F29FAD1EC33E07001BD225 /* LaunchScreen.storyboard */,
 				E5F29FB01EC33E07001BD225 /* Info.plist */,
+				E5F7149B1EDEF313006E0775 /* Timeslot.swift */,
+				E5F7149D1EDEF350006E0775 /* Section.swift */,
+				E5F7149F1EDEF37E006E0775 /* SubSection.swift */,
+				E5F714A11EDEF398006E0775 /* Commitment.swift */,
+				E5F714A31EDEF3B4006E0775 /* Course.swift */,
+				E5F714A51EDEF3C8006E0775 /* Node.swift */,
+				E5F714A71EDEF3E1006E0775 /* LinkedList.swift */,
+				E5F714A91EDEF3F9006E0775 /* MyComparator.swift */,
+				E5F714AB1EDEF41B006E0775 /* Schedule.swift */,
+				E5F714AD1EDEF438006E0775 /* ScheduleGenerator.swift */,
 			);
 			path = Schedula;
 			sourceTree = "<group>";
@@ -187,6 +238,10 @@
 		E5F29F991EC33E07001BD225 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					2,
+				);
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Cole Dorma";
@@ -262,8 +317,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F714A41EDEF3B4006E0775 /* Course.swift in Sources */,
+				E518E9FE1ECC9D820042E57F /* CalendarCollectionViewController.swift in Sources */,
+				E5F714AC1EDEF41B006E0775 /* Schedule.swift in Sources */,
+				E5F29FD71EC34678001BD225 /* SecondViewController.swift in Sources */,
+				E5F714B01EE051EE006E0775 /* CourseTabController.swift in Sources */,
+				E518EA041ECCE0F80042E57F /* OptionCollectionViewCell.swift in Sources */,
+				E5F7149C1EDEF313006E0775 /* Timeslot.swift in Sources */,
+				E518EA001ECCA0470042E57F /* CollectionViewCell.swift in Sources */,
+				E5F7149E1EDEF350006E0775 /* Section.swift in Sources */,
+				E5F714AE1EDEF438006E0775 /* ScheduleGenerator.swift in Sources */,
+				E5F714A01EDEF37E006E0775 /* SubSection.swift in Sources */,
+				E5F29FE31EC373E8001BD225 /* FallViewController.swift in Sources */,
+				E5F714A21EDEF398006E0775 /* Commitment.swift in Sources */,
 				E5F29FA71EC33E07001BD225 /* ViewController.swift in Sources */,
+				E5F714AA1EDEF3F9006E0775 /* MyComparator.swift in Sources */,
+				E50E37C51EC4ADE50008DA7D /* WinterViewController.swift in Sources */,
+				E5F714A81EDEF3E1006E0775 /* LinkedList.swift in Sources */,
 				E5F29FA51EC33E07001BD225 /* AppDelegate.swift in Sources */,
+				E5F714A61EDEF3C8006E0775 /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Alacrity-Development.Schedula";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -436,6 +509,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Alacrity-Development.Schedula";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -516,6 +590,7 @@
 				E5F29FCB1EC33E07001BD225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5F29FCC1EC33E07001BD225 /* Build configuration list for PBXNativeTarget "SchedulaTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +599,7 @@
 				E5F29FCE1EC33E07001BD225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5F29FCF1EC33E07001BD225 /* Build configuration list for PBXNativeTarget "SchedulaUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +608,7 @@
 				E5F29FD11EC33E07001BD225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
