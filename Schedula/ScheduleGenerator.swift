@@ -42,7 +42,7 @@ public class ScheduleGenerator {
         generate(size: size)
         let endTime = DispatchTime.now()
         let nanoTime = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
-        print("Execution time : \(nanoTime)")
+        print("Execution time in milliseconds: \(nanoTime/1000000)")
         
     }
     
@@ -58,12 +58,11 @@ public class ScheduleGenerator {
                 for s in c.sections {
                     
                     /* IF ONLINE COURSE */
-                    if (s.numDays() == 0){
+                    /*if (s.numDays() == 0){
                         posSchedg.add(s: s)
                         if (s.getSubSecs().count == 0) {
                             continue
                         }
-                        print("ONLINEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: \(posSchedg)")
                         subCount -= 1
                         s.subSec = s.getSubSecs().shuffled()
                         let ss = s.getSubSecs()[Int(arc4random_uniform(UInt32(s.getSubSecs().count)))]
@@ -93,7 +92,7 @@ public class ScheduleGenerator {
                         if (posSchedg.contains(s: s)) {
                             break
                         }
-                    }
+                    }*/
                     
                     /* ELSE */
                     switch (periods.count) {
@@ -155,7 +154,6 @@ public class ScheduleGenerator {
                     
                 }
             }
-            print("Schedule size: \(schedules.count)")
             if (posSchedg.getSize() == ((courses.count*2) - subCount)){
                 if schedules.count == 0{
                     schedules.append(value: posSchedg)
@@ -165,7 +163,6 @@ public class ScheduleGenerator {
                         if schedules.valueAt(index: index) != posSchedg {
                             amountNotEqualTo += 1
                             if amountNotEqualTo >= schedules.count {
-                                print("ADD TO LIST BECAUSE NOT IN LIST")
                                 schedules.append(value: posSchedg)
                             }
                         }
@@ -174,16 +171,15 @@ public class ScheduleGenerator {
             }
             
             if (searchCount>=size*10) {
+                //schedules.sort(MyComparator)
                 break
             } else {
                 searchCount += 1
+                
             }
             
         }
-        
-        //Collections.sort(schedules, MyComparator());
-        //schedules.sort(by: MyComparator)
-        print(" \(searchCount) = # of loops\n \(toString())")
+
         
     }
     
@@ -241,7 +237,7 @@ extension MutableCollection where Indices.Iterator.Element == Index {
     mutating func shuffle() {
         let c = count
         guard c > 1 else { return }
-        
+         c
         for (firstUnshuffled , unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
             let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
             guard d != 0 else { continue }

@@ -27,7 +27,6 @@ class FallViewController: UITableViewController {
             self.courseArray = tbvc.courseArray
         }
         self.fullCoursesFall = tbvc.selectedCoursesFall
-        print(coursesFall)
         
         doneButton.layer.cornerRadius = 4
         addButton.layer.cornerRadius = 4
@@ -61,14 +60,13 @@ class FallViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         courseArray.remove(at: indexPath.row)
         fullCoursesFall.remove(at: indexPath.row)
-        print(courseArray)
+
         self.tableView.reloadData()
     }
   
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
         courseText.text = courseText.text?.uppercased()
-        print("Course test UPPERCASe? \(courseText.text?.uppercased())")
         let splitString = courseText.text?.components(separatedBy: " ")
         courseCode = (splitString?[0])!
         if (splitString?.count)! >= 2 {
@@ -121,7 +119,6 @@ class FallViewController: UITableViewController {
             present(alert, animated: true)
         }
         print("Full Courses: \(fullCoursesFall)")
-        print("courseArray: \(courseArray)")
         self.tableView.reloadData()
         courseText.text = ""
         

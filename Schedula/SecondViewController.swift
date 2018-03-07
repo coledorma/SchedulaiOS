@@ -60,8 +60,6 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("SECOND: ")
-        print(secCourseArray)
         
         preferredDayPicker.dataSource = self
         preferredDayPicker.delegate = self
@@ -114,22 +112,6 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             }
             
             commitments = commitmentsSpecificTimes + commitmentsWholeDays
-            
-            print("Courses: \(fullCoursesFall)")
-            for index in 0...fullCoursesFall.count - 1{
-                print("Course Sections: \(fullCoursesFall[index].sections.count)")
-                for ind in 0...fullCoursesFall[index].sections.count - 1{
-                    print("Course Sections crn: \(fullCoursesFall[index].sections[ind].getCrn())")
-                    print("Course Sections crn: \(fullCoursesFall[index].sections[ind].times)")
-                    print("Course SubSections: \(fullCoursesFall[index].sections[ind].getSubSecs())")
-                    for i in 0...fullCoursesFall[index].sections[ind].times.count - 1{
-                        print("index: \(index), ind: \(ind), i: \(i)")
-                        print("Course subsection time START: \(String(describing: fullCoursesFall[index].sections[ind].times[i]?.getStart()))")
-                        print("Course subsection time END: \(String(describing: fullCoursesFall[index].sections[ind].times[i]?.getEnd()))")
-
-                    }
-                }
-            }
 
             let schedules = ScheduleGenerator(cr: fullCoursesFall, cm: commitments, p: preferredDay, size: 10, prefOnline: false)
             schedulesLinked = schedules.schedules
@@ -244,6 +226,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
     }
+    
     @IBAction func begTextClicked(_ sender: Any) {
         begDone = true
     }
@@ -294,7 +277,6 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             endTime.resignFirstResponder()
             endDone = false
             begDone = false
-            print(specificTimes)
             tableView.reloadData()
         }
         
@@ -321,7 +303,6 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         specificTimes.remove(at: indexPath.row)
         commitmentsSpecificTimes.remove(at: indexPath.row)
-        print(specificTimes)
         tableView.reloadData()
     }
     

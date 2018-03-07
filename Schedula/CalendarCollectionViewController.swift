@@ -36,7 +36,7 @@ class CalendarCollectionViewController: UIViewController, UICollectionViewDataSo
 
     @IBOutlet var dayLabel: UILabel!
     
-    var days = ["M", "T", "W", "T", "F"]
+    var days = ["M", "Tu", "W", "Th", "F"]
     
     override func viewWillAppear(_ animated: Bool) {
         //collectionView!.reloadData()
@@ -44,12 +44,6 @@ class CalendarCollectionViewController: UIViewController, UICollectionViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Cal courses: \(courseArray)")
-        for i in 0...schedulesLinked.count - 1 {
-            print("ID 1: \(schedulesLinked.valueAt(index: i).sections[0].ID)")
-            
-            print("Schedules count: \(schedulesLinked.count)")
-        }
         
         for i in 0...schedulesLinked.count - 1{
             optionArray.append(letterArray[i])
@@ -255,7 +249,6 @@ class CalendarCollectionViewController: UIViewController, UICollectionViewDataSo
         var temp = [String]()
         
         for j in 0...schedulesLinked.valueAt(index: i).sections.count - 1 {
-            print("what are these times[1] looking like? \(String(describing: schedulesLinked.valueAt(index: i).sections[j].times[1]?.day))")
             if schedulesLinked.valueAt(index: i).sections[j].ID.characters.count > 1 && schedulesLinked.valueAt(index: i).sections[j].times[0]?.day == nil && schedulesLinked.valueAt(index: i).sections[j].times[1]?.day == nil{
                 var tempID = schedulesLinked.valueAt(index: i).sections[j].ID
                 
@@ -269,8 +262,7 @@ class CalendarCollectionViewController: UIViewController, UICollectionViewDataSo
                 print("LEC Online Array: \(onlineArray)")
             } else if schedulesLinked.valueAt(index: i).sections[j].ID.characters.count == 10 {
                 for k in 0...1 {
-                    print("Index of k = \(k)")
-                    print("HELLLLLLLLLLLL \(schedulesLinked.valueAt(index: i).sections[j].times[k]!.day)")
+                    //if schedulesLinked.valueAt(index: i).sections[j].times[k] != nil {
                     if schedulesLinked.valueAt(index: i).sections[j].times[k]!.day == "M" {
                         var tempID = schedulesLinked.valueAt(index: i).sections[j].ID
                         
@@ -332,8 +324,9 @@ class CalendarCollectionViewController: UIViewController, UICollectionViewDataSo
                         print("LEC Fri Array: \(friArray)")
                         
                     }
+                    //}
                 }
-                //TUTORIAL
+            //TUTORIAL
             } else {
                 
                 if schedulesLinked.valueAt(index: i).sections[j].times[0]!.day == "M" {

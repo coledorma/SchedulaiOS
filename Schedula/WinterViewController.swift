@@ -28,7 +28,6 @@ class WinterViewController: UITableViewController {
         }
         fullCoursesWint = tbvc.selectedCoursesWint
         
-        print(coursesWint)
         addButton.layer.cornerRadius = 4
         doneButton.layer.cornerRadius = 4
         
@@ -63,7 +62,6 @@ class WinterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         courseArray.remove(at: indexPath.row)
         fullCoursesWint.remove(at: indexPath.row)
-        print(courseArray)
         self.tableView.reloadData()
     }
 
@@ -125,7 +123,6 @@ class WinterViewController: UITableViewController {
             }
         }
 
-        print(courseArray)
         self.tableView.reloadData()
         courseText.text = ""
     }

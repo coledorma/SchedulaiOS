@@ -99,7 +99,6 @@ public func ==(lhs: Schedule, rhs: Schedule) -> Bool {
             if lhs.sections[i].crn == rhs.sections[j].crn {
                 sameCount += 1
                 if sameCount >= lhs.sections.count && sameCount >= rhs.sections.count {
-                    print("EQUAL")
                     return true
                 }
                 break

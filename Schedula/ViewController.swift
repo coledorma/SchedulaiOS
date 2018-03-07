@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, XMLParserDelegate {
+class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet var NextButton: UIButton!
     
     @IBOutlet var circleButton: UIButton!
+    
+    @IBOutlet var okButton: UIButton!
+    
+    @IBOutlet var schoolPicker: UIPickerView!
+    
+    @IBOutlet var selectSchoolText: UILabel!
     
     @IBOutlet var schedUnderText: UILabel!
     
@@ -27,6 +33,8 @@ class ViewController: UIViewController, XMLParserDelegate {
     var coursesWint = [Course]()
     var coursesFall = [Course]()
     var currentElement : String?
+    var supportedSchools = [String]()
+    var selectedSchool = ""
     
     var lineCount = 0
     var dead = 0
@@ -40,41 +48,32 @@ class ViewController: UIViewController, XMLParserDelegate {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundQueue.async {
-            print("Started")
-            let startTime = DispatchTime.now()
-            self.beginParsing()
-            let endTime = DispatchTime.now()
-            let nanoTime = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
-            print("Total parsing time: \(nanoTime/1000000000) seconds")
-            DispatchQueue.main.async {
-            }
-        }
         
-        schedText.text = ""
-        schedUnderText.text = ""
+        supportedSchools = ["Carleton University"]
+        
+        schoolPicker.dataSource = self
+        schoolPicker.delegate = self
+        schoolPicker.selectRow(0, inComponent: 0, animated: false)
+        
         NextButton.isHidden = true
+        
         NextButton.layer.cornerRadius = 4
-        circleButton.isHidden = true
-        schedulaLogo.isHidden = true
+        okButton.layer.cornerRadius = 4
+        
         circleButton.layer.cornerRadius = 127.5
         self.simpleProgress?.progress = 0.0
-        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.updateProgress), userInfo: nil, repeats: true)
+        self.simpleProgress?.isHidden = true
         
     }
     
     func updateProgress() {
-        self.simpleProgress?.progress += 0.01
-        print("Prog: \(simpleProgress?.progress)")
+        self.simpleProgress?.isHidden = false
+        self.simpleProgress?.progress += 0.003
         if simpleProgress?.progress == 1.0 {
-            print("DONE")
+            print("DONE LOADING")
             self.simpleProgress?.removeFromSuperview()
             timer?.invalidate()
-            schedText.text = "Schedula"
-            schedUnderText.text = "Your painless and powerful course scheduling application."
             NextButton.isHidden = false
-            circleButton.isHidden = false
-            schedulaLogo.isHidden = false
             
         }
     }
@@ -85,12 +84,47 @@ class ViewController: UIViewController, XMLParserDelegate {
     }
 
     @IBAction func NextButtonClicked(_ sender: UIButton) {
-        print("clicked")
         performSegue(withIdentifier: "passCoursesFallWint", sender: sender)
     }
     
-    func beginParsing(){
-        parser = XMLParser(contentsOf:(NSURL(string:"https://raw.githubusercontent.com/EvanCooper9/Schedula/master/courses.xml?token=ASkrwAM-lCWdXxVgo_CjFC4ogVTqwfmNks5ZSmndwA%3D%3D"))! as URL)!
+    @IBAction func okButtonClicked(_ sender: UIButton) {
+        schoolPicker.isHidden = true
+        selectSchoolText.isHidden = true
+        okButton.isHidden = true
+        
+        backgroundQueue.async {
+            print("Started parsing")
+            let startTime = DispatchTime.now()
+            self.beginParsing(selectedSchool: self.selectedSchool)
+            let endTime = DispatchTime.now()
+            let nanoTime = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
+            print("Total parsing time: \(nanoTime/1000000000) seconds")
+            DispatchQueue.main.async {
+            }
+        }
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.updateProgress), userInfo: nil, repeats: true)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return supportedSchools.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        selectedSchool = supportedSchools[0]
+        return supportedSchools[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedSchool = supportedSchools[row]
+    }
+    
+    func beginParsing(selectedSchool: String){
+        parser = XMLParser(contentsOf:(NSURL(string:"https://raw.githubusercontent.com/EvanCooper9/Schedula/master/courses.xml?token=ASkrwNwXQ5G65heqM1DuMva6vtf4iH4Zks5Z0_EbwA%3D%3D"))! as URL)!
         parser.delegate = self
         parser.parse()
     }
